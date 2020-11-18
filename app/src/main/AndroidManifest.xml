@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.alisha.qa">
+    package="com.example.notificationdemo" >
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launch_24"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme" >
+
+        <activity
+            android:name="com.alisha.qa.MainActivity"
+            android:label="@string/app_name" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-    </application>
 
+        </activity>
+
+        <activity android:name="com.alisha.qa.NotificationDetailActivity"
+            android:label="Details of notification"
+            android:parentActivityName="com.alisha.qa.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.alisha.qa.MainActivity"/>
+        </activity>
+
+    </application>
 </manifest>
+
