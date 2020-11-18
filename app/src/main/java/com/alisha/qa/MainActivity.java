@@ -29,21 +29,63 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 addNotificationyes();
-                System.out.println("sjnjsad");
+            }
+        });
+        noTxt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNotificationNo();
             }
         });
 
     }
 
+    private void addNotificationNo() {
+        String message = "You chosed second answer";
+        NotificationCompat.Builder builder =
+                new NotificationCompat.Builder(this)
+                        .setAutoCancel(true)
+                        .setSmallIcon(R.drawable.ic_message)
+                        .setContentTitle("Notifications Example")
+                        .setContentText("You clicked second answer");
+        Intent notificationIntent = new Intent(this, NotificationDetailActivity.class);
+        notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        notificationIntent.putExtra("message", message);
+
+        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(contentIntent);
+// Add as notification
+        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+        System.out.println("kjnsajdsb");
+        // === Removed some obsoletes
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+            System.out.println("bjsjsdjs");
+            String channelId = "Your_channel_id";
+            NotificationChannel channel = new NotificationChannel(
+                    channelId,
+                    "Channel human readable title",
+                    NotificationManager.IMPORTANCE_HIGH);
+            manager.createNotificationChannel(channel);
+            builder.setChannelId(channelId);
+        }
+
+        manager.notify(0, builder.build());
+
+    }
+
     private void addNotificationyes() {
-        System.out.println("snajhbjs");
+        String message = "You chosed first answer";
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.ic_message)
+                        .setAutoCancel(true)
                         .setContentTitle("Notifications Example")
-                        .setContentText("This is a test notification");
-        System.out.println("123"+ builder);
+                        .setContentText("You clicked first answer");
         Intent notificationIntent = new Intent(this, MainActivity.class);
+        notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        notificationIntent.putExtra("message", message);
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
         builder.setContentIntent(contentIntent);
