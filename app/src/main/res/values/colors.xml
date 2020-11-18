@@ -6,5 +6,8 @@
     <color name="softGreen">#BFE3B4</color>
     <color name="white">#FFFFFF</color>
     <color name="yellow">#FFFF00</color>
+    <color name="orange">#f89e1d</color>
+    <color name="lightGrey">#CCC</color>
+
 
 </resources>

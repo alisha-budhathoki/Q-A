@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/my_gradient_drawable"
+    android:theme="@style/Theme.AppCompat.NoActionBar"
     tools:context=".NotificationDetailActivity">
     <TextView
         android:id="@+id/notifDetailTxt"
@@ -11,6 +13,8 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textSize="20sp"
+        android:layout_margin="15dp"
+        android:textColor="@color/white"
         android:text="Hi, Your Detailed notification view goes here...."
         android:layout_marginTop="20dp"
         app:layout_constraintLeft_toLeftOf="parent"
