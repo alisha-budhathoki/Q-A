@@ -12,76 +12,64 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.alisha.qa.model.AnswersModel;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class MainActivity extends AppCompatActivity {
     Button yesTxt, noTxt;
+    DatabaseReference databaseReference;
+    String message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        databaseReference = FirebaseDatabase.getInstance().getReference("answers");
         yesTxt = findViewById(R.id.answr1);
         noTxt = findViewById(R.id.answr2);
 
         yesTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addNotificationyes();
+//                System.out.println("bshjdsjdhb");
+                addNotificationyes("Yes");
             }
         });
         noTxt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addNotificationNo();
+                addNotificationyes("no");
             }
         });
 
-    }
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
 
-    private void addNotificationNo() {
-        String message = "You chosed second answer";
-        NotificationCompat.Builder builder =
-                new NotificationCompat.Builder(this)
-                        .setAutoCancel(true)
-                        .setSmallIcon(R.drawable.ic_message)
-                        .setContentTitle("Notifications Example")
-                        .setContentText("You clicked second answer");
-        Intent notificationIntent = new Intent(this, NotificationDetailActivity.class);
-        notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        notificationIntent.putExtra("message", message);
+        myRef.setValue("Hello, World!");    }
 
-        PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent,
-                PendingIntent.FLAG_UPDATE_CURRENT);
-        builder.setContentIntent(contentIntent);
-// Add as notification
-        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        System.out.println("kjnsajdsb");
-        // === Removed some obsoletes
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-        {
-            System.out.println("bjsjsdjs");
-            String channelId = "Your_channel_id";
-            NotificationChannel channel = new NotificationChannel(
-                    channelId,
-                    "Channel human readable title",
-                    NotificationManager.IMPORTANCE_HIGH);
-            manager.createNotificationChannel(channel);
-            builder.setChannelId(channelId);
+
+    private void addNotificationyes(String answer) {
+        String id = databaseReference.push().getKey();
+        System.out.println("jsbj"+id);
+        AnswersModel answersModel = new AnswersModel(id, answer);
+        databaseReference.child(id).setValue(answer);
+        Toast.makeText(MainActivity.this,"Answers added",Toast.LENGTH_SHORT).show();
+        if (answer == "Yes") {
+            message = "You chosed first answer";
         }
-
-        manager.notify(0, builder.build());
-
-    }
-
-    private void addNotificationyes() {
-        String message = "You chosed first answer";
+        else {
+            message = "You chosed second answer";
+        }
         NotificationCompat.Builder builder =
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.ic_message)
                         .setAutoCancel(true)
                         .setContentTitle("Notifications Example")
-                        .setContentText("You clicked first answer");
+                        .setContentText(message);
         Intent notificationIntent = new Intent(this, NotificationDetailActivity.class);
         notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         notificationIntent.putExtra("message", message);
