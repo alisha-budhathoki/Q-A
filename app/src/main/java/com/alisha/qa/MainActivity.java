@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 public class MainActivity extends AppCompatActivity {
-    Button yesTxt, noTxt;
+    Button yesTxt, noTxt, btnGotoAnother;
     DatabaseReference databaseReference;
     String message;
 
@@ -28,9 +28,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         databaseReference = FirebaseDatabase.getInstance().getReference("answers");
         yesTxt = findViewById(R.id.answr1);
         noTxt = findViewById(R.id.answr2);
+        btnGotoAnother = findViewById(R.id.gotoAnotherPage);
 
         yesTxt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnGotoAnother.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentGo = new Intent(getApplicationContext(), ItemActivity.class);
+                startActivity(intentGo);
+            }
+        });
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
 

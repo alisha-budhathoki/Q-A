@@ -36,6 +36,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
             android:background="@drawable/shapes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -88,6 +89,25 @@
                 app:layout_constraintLeft_toRightOf="@+id/answr1"
                 app:layout_constraintTop_toBottomOf="@+id/qstn1" />
 
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/gotoAnotherPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Goto recycler view"
+        android:textAllCaps="false"
+        android:background="@drawable/layer_list"
+        android:textColor="@color/white"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
