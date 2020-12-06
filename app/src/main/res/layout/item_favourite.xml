@@ -18,9 +18,9 @@
         android:id="@+id/ic_fvrtLove"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_message"
+        android:src="@drawable/icon_love_fill"
         android:layout_marginRight="5dp"
-        app:tint="@color/white"
+        app:tint="#000000"
         app:layout_constraintEnd_toStartOf="@+id/txt_likes_fvrt"
         app:layout_constraintBottom_toBottomOf="@+id/iv_fvrt"/>
 

@@ -9,7 +9,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 
 public class ItemActivity extends AppCompatActivity {
-    private int[] favrtVideoPic = new int[]{R.drawable.ic_launcher_background, R.drawable.ic_launcher_background, R.drawable.ic_launcher_background, R.drawable.ic_launcher_background, R.drawable.ic_launcher_background};
+    private int[] favrtVideoPic = new int[]{R.drawable.bkgrnd, R.drawable.bkgrnd, R.drawable.bkgrnd, R.drawable.bkgrnd, R.drawable.bkgrnd};
     private String[] favNoLikes = new String[]{"2k", "1k", "6k", "2k", "1k"};
 
     FavouriteAdapter favouriteAdapter;
