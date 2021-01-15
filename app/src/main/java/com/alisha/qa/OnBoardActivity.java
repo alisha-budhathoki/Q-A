@@ -24,9 +24,9 @@ public class OnBoardActivity extends AhoyOnboarderActivity {
 
     private void initOnBoard() {
         //Onboarding Cards
-        AhoyOnboarderCard ahoyOnboarderCard1 = new AhoyOnboarderCard("Welcome to the exam app", "test", R.drawable.test);
-        AhoyOnboarderCard ahoyOnboarderCard2 = new AhoyOnboarderCard("Choose the option for best answer", "trest", R.drawable.testt);
-        AhoyOnboarderCard ahoyOnboarderCard3 = new AhoyOnboarderCard("Good luck with your exam", "test", R.drawable.exam);
+        AhoyOnboarderCard ahoyOnboarderCard1 = new AhoyOnboarderCard("Welcome to the exam app", "", R.drawable.test);
+        AhoyOnboarderCard ahoyOnboarderCard2 = new AhoyOnboarderCard("Choose the option for best answer", "", R.drawable.testt);
+        AhoyOnboarderCard ahoyOnboarderCard3 = new AhoyOnboarderCard("Good luck with your exam", "", R.drawable.exam);
 
         ahoyOnboarderCard1.setBackgroundColor(R.color.white);
         ahoyOnboarderCard2.setBackgroundColor(R.color.white);
