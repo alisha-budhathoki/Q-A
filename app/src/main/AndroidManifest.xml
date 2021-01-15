@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ItemActivity"></activity>
         <activity android:name=".NotificationDetailActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".OnBoardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
