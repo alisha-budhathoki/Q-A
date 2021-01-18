@@ -104,4 +104,10 @@ public class MainActivity extends AppCompatActivity {
         manager.notify(0, builder.build());
 
     }
+
+    public void openreactionScreen(View view) {
+        System.out.println("ndsjksbsd");
+        Intent gotoScreen = new Intent(MainActivity.this, ReactionScreen.class);
+        startActivity(gotoScreen);
+    }
 }

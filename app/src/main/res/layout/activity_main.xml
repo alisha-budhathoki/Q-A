@@ -127,4 +127,23 @@
         app:layout_constraintTop_toBottomOf="@+id/gotoAnotherPage"
         />
 
+    <Button
+        android:id="@+id/openReactionPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open Reaction Screen dialog"
+        android:textAllCaps="false"
+        android:background="@drawable/layer_list"
+        android:textColor="@color/white"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:onClick="openreactionScreen"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/openBottomSheetDialog"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
