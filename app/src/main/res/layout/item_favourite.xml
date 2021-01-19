@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_centerHorizontal="true"
         android:layout_height="150dp"
-        android:src="@drawable/bkgrnd"
+        android:src="@color/white"
         android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,18 +24,17 @@
         app:layout_constraintEnd_toStartOf="@+id/txt_likes_fvrt"
         app:layout_constraintBottom_toBottomOf="@+id/iv_fvrt"/>
 
-    <TextView
+    <Button
         android:id="@+id/txt_likes_fvrt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="3K"
         android:textSize="10dp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_marginBottom="10dp"
         android:textStyle="bold"
-        android:layout_marginRight="12dp"
+        android:layout_marginRight="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@+id/iv_fvrt"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

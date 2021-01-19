@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -53,6 +54,12 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.MyVi
                 }
             }
         });
+//        holder.noFavouriteLikes.setOnStateChangeListener (new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                System.out.println("daksnsj");
+//            }
+//        });
     }
 
 
@@ -63,7 +70,7 @@ public class FavouriteAdapter extends RecyclerView.Adapter<FavouriteAdapter.MyVi
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         RecyclerView recyclerView;
         //        VideoView favouriteVideo;
-        TextView noFavouriteLikes;
+        Button noFavouriteLikes;
         ImageView favVideoImage, loveReact;
 
         public MyViewHolder(View itemView) {
