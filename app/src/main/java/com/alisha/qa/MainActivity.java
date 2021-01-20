@@ -110,4 +110,9 @@ public class MainActivity extends AppCompatActivity {
         Intent gotoScreen = new Intent(MainActivity.this, ReactionScreen.class);
         startActivity(gotoScreen);
     }
+    public void openAnimationScreen(View view) {
+        System.out.println("ndsjksbsd");
+        Intent gotoScreen = new Intent(MainActivity.this, AnimationScreen.class);
+        startActivity(gotoScreen);
+    }
 }
