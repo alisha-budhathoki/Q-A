@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/my_gradient_drawable"
+    tools:context=".MainActivity"
+    >
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:fontFamily="@font/milkshake"
+        android:textSize="55sp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintBottom_toTopOf="@+id/questions"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/questions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Are you sure? It doesn't mention that in the docs I link to in the above comment, although I just saw it is marked as such in the res docs. Strange they don't mention that on the TextView page . The trouble is that the workaround they suggest (multiline) stops the view being clickable as I put in my OP. "
+        android:textSize="25sp"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:textStyle="bold"
+        android:inputType="textMultiLine"
+        android:maxLines="4"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome"
+        android:fontFamily="@font/quick_sand"/>
+
+    <!--    <Button-->
+    <!--        android:id="@+id/yes"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="Yes"-->
+    <!--        android:textSize="18sp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:layout_marginLeft="20dp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintRight_toLeftOf="@+id/no"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/questions" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/no"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="No"-->
+    <!--        android:textSize="18sp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:layout_marginLeft="20dp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintLeft_toRightOf="@+id/yes"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/questions" />-->
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/questions"
+        android:id="@+id/radio">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:id="@+id/sound"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginRight="45dp"
+            android:text="Yes" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/vibration"
+            android:text="No" />
+
+
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

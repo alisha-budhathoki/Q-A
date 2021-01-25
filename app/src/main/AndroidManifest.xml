@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AnimationScreen"></activity>
+        <activity android:name=".RadioList"></activity>
+        <activity android:name=".AnimationScreen" />
         <activity android:name=".ItemActivity" />
         <activity android:name=".NotificationDetailActivity" />
         <activity android:name=".OnBoardActivity" />

@@ -115,4 +115,9 @@ public class MainActivity extends AppCompatActivity {
         Intent gotoScreen = new Intent(MainActivity.this, AnimationScreen.class);
         startActivity(gotoScreen);
     }
+    public void openRadio(View view) {
+        System.out.println("ndsjksbsd");
+        Intent gotoScreen = new Intent(MainActivity.this, RadioList.class);
+        startActivity(gotoScreen);
+    }
 }
